@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Studentapp
+  labels:
+    app: Studentapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Studentapp
+  template:
+    metadata:
+      labels:
+        app: Studentapp
+    spec:
+      containers:
+      - name: Studentapp
+        image: aamantamboli/mynewstudentapp:replaceImageTag
+        ports:
+        - containerPort: 8080
